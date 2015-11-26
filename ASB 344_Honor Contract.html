@@ -1,0 +1,168 @@
+﻿<html>
+<body>
+    <style>
+        .u{
+             position: absolute;
+             image-orientation: 90deg;
+             top: 50%;
+             left: 70%;
+             margin-right: -30%;
+             transform: translate(-50%, -50%);
+        }
+        .k{
+             position: absolute;
+             image-orientation: 90deg;
+             top: 50%;
+             left: 30%;
+             margin-right: -70%;
+             transform: translate(-50%, -50%);
+        }
+          #kind{
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             margin-right: -50%;
+             transform: translate(-50%, -50%);
+        }
+            #unKind{
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             margin-right: -50%;
+             transform: translate(-50%, -50%);
+        }
+
+            .button{
+                position: absolute;
+                left: 50%;
+                margin-right: -50%;
+                top: 80%;
+                transform: translate(-50%, -50%);
+                display: none;
+            }
+    </style>
+    
+    <img src="slideK.JPG" id="SlideK" class="k" width="307" height="307" onclick="showKind1()">
+    <img src="slideU.JPG" id="SlideU" class ="u" width="307" height="307" onclick="showUnkind1()">
+    <img src="kissK.JPG" id="KissK" class="k" width="307" height="307" style="display:none" onclick="showKind2()">
+    <img src="kissU.JPG" id="KissU" class ="u" width="307" height="307" style="display:none" onclick="showUnkind2()">
+    <img src="padK.JPG" id="PadK" class="k" width="307" height="307" style="display:none" onclick="showKind3()">
+    <img src="padU.JPG" id="PadU" class ="u" width="307" height="307" style="display:none" onclick="showUnkind3()">
+
+    <button type="button" id="button1" class="button" onclick="showSet2()">Next</button>
+    <button type="button" id="button2" class="button" onclick="showSet3()">Next</button>
+    <button type="button" id="button3" class="button" onclick="showSet1()">Play Again?</button>
+
+    <video width="0" height="0" id="kind">
+        <source src="Gunther_Kind.mp4" type="video/mp4" display="none">
+        Your browser does not support the video tag.
+    </video>
+    <video width="0" height="0" id="unkind">
+        <source src="Gunther_Unkind.mp4" type="video/mp4" display="none" >
+        Your browser does not support the video tag.
+    </video>
+
+    <script src="jquery-1.11.3.js" type="text/javascript">
+    </script>
+
+    <script>
+        var unkind = document.getElementById('unkind');
+        var kind = document.getElementById('kind');
+
+        function showSet1() {
+            $('#SlideK').show();
+            $('#SlideU').show();
+            $('#button3').hide();
+            $(kind).attr("width", "0");
+            $(kind).attr("height", "0");
+            $(unkind).attr("width", "0");
+            $(unkind).attr("height", "0");
+        }
+
+        function showSet2() {
+            $('#KissK').show();
+            $('#KissU').show();
+            $('#button1').hide();
+            $(kind).attr("width", "0");
+            $(kind).attr("height", "0");
+            $(unkind).attr("width", "0");
+            $(unkind).attr("height", "0");
+        }
+
+        function showSet3() {
+            $('#PadK').show();
+            $('#PadU').show();
+            $('#button2').hide();
+            $(kind).attr("width", "0");
+            $(kind).attr("height", "0");
+            $(unkind).attr("width", "0");
+            $(unkind).attr("height", "0");
+        }
+
+        function showKind1(){
+            kind.autoplay = true;
+            kind.load();
+            $(kind).attr("width", "307");
+            $(kind).attr("height", "307");
+            $(SlideK).hide();
+            $(SlideU).hide();
+            $(button1).show();
+        }
+
+        function showUnkind1() {
+            unkind.autoplay = true;
+            unkind.load();
+            $(unkind).attr("width", "307");
+            $(unkind).attr("height", "307");
+            $(SlideK).hide();
+            $(SlideU).hide();
+            $(button1).show();
+        }
+
+
+        function showKind2() {
+            kind.autoplay = true;
+            kind.load();
+            $(kind).attr("width", "307");
+            $(kind).attr("height", "307");
+            $(KissK).hide();
+            $(KissU).hide();
+            $(button2).show();
+
+        }
+
+        function showUnkind2() {
+            unkind.autoplay = true;
+            unkind.load();
+            $(unkind).attr("width", "307");
+            $(unkind).attr("height", "307");
+            $(KissK).hide();
+            $(KissU).hide();
+            $(button2).show();
+        }
+
+
+        function showKind3() {
+            kind.autoplay = true;
+            kind.load();
+            $(kind).attr("width", "307");
+            $(kind).attr("height", "307");
+            $(PadK).hide();
+            $(PadU).hide();
+            $(button3).show();
+        }
+
+        function showUnkind3() {
+            unkind.autoplay = true;
+            unkind.load();
+            $(unkind).attr("width", "307");
+            $(unkind).attr("height", "307");
+            $(PadK).hide();
+            $(PadU).hide();
+            $(button3).show();
+        }
+    </script>
+    
+</body>
+
+</html>
